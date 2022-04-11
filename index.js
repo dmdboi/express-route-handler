@@ -7,11 +7,16 @@ module.exports = class Routes {
         this.routes = fs.readdirSync(`${root}/routes`).filter(file => file.endsWith('.js'));
         this.methods = ['get', 'delete', 'patch', 'post', 'put']
 
-        this.config = config || {
+        this.defaults = {
             api: false,
+            protection: false,
             urls: ['/.env'],
             redirect: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         }
+
+        this.config = Object.assign({}, this.defaults, config)
+
+        console.log(this.config)
     };
 
     setup() {
@@ -19,7 +24,7 @@ module.exports = class Routes {
         let routes = [];
 
         this.routes.forEach(commandFile => {
-            const imported = require(`${root}/${commandFile}`)
+            const imported = require(`${root}/routes/${commandFile}`)
 
             if (!imported.enabled) {
                 console.log(`Skipping ${commandFile} - Disabled`)
@@ -68,9 +73,11 @@ module.exports = class Routes {
         });
 
         if (this.config.protection) {
+            let _ = this
+
             this.router.use(function (req, res, next) {
-                if (this.config.urls.includes(req.originalUrl)) {
-                    return res.redirect(this.config.redirect)
+                if (_.config.urls.includes(req.originalUrl)) {
+                    return res.redirect(_.config.redirect)
                 }
 
                 return next()
