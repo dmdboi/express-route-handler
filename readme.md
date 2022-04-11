@@ -41,12 +41,12 @@ module.exports = index;
 ```
 
 ## Route
-```
-name - Name of the route, appends to the end of the global path, i.e /api/users.
-method - HTTP method.
-fn - Function to execute when the endpoint is hit.
-docs - Endpoint documentation link.
-```
+| *Key* | *Desc* | *Required*  
+| --------------- | --------------- | --------------- |
+| `name`       | Name of the route, appends to the end of the global path, i.e /api/users.  | Yes 
+| `method`     | HTTP method.                                                               | Yes 
+| `fn`         | Function to execute when the endpoint is hit.                              | Yes 
+| `docs`       | Endpoint documentation link.                                               | No
 
 ## Options
 
