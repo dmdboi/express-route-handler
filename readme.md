@@ -8,6 +8,9 @@ This package also adds an Error handler for non-existent routes.
 
 **app.js**
 ```
+const router = express.Router();
+const Routes = require('./utils/routes');
+
 const routes = new Routes(router, { api: true })
 app.use(routes.get())
 ```
@@ -29,6 +32,8 @@ const index = {
     }
   ]
 }
+
+module.exports = index;
 ```
 
 ## Route
