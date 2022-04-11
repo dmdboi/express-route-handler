@@ -1,6 +1,6 @@
 {
   "name": "express-route-handler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Dynamic Route Loader and Handler",
   "main": "index.js",
   "scripts": {
