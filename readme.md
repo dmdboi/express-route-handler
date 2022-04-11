@@ -50,11 +50,11 @@ docs - Endpoint documentation link.
 
 ## Options
 
-[cols="1, 2, 1", options="header"]
-|===
-| *Option* | *Desc* | *Default*
-| `api: true`| Toggles /api/routes which returns all routes and link to documentation. | ``false``
-| `protection: true`| Redirects all requests from *urls* Array to *redirect* option. | ``false``
-| `urls: ['/.env']`| Array of URLS to redirect requests away from | ``[./env]``
-| `redirect: "/"`| URL to redirect requests to | [link](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-|===
+[cols="1, 2, 1", options="header"]  
+|===  
+| *Option* | *Desc* | *Default*  
+| `api: true`| Toggles /api/routes which returns all routes and link to documentation. | ``false``  
+| `protection: true`| Redirects all requests from *urls* Array to *redirect* option. | ``false``  
+| `urls: ['/.env']`| Array of URLS to redirect requests away from | ``[./env]``  
+| `redirect: "/"`| URL to redirect requests to | [link](https://www.youtube.com/watch?v=dQw4w9WgXcQ)  
+|===  
