@@ -15,8 +15,6 @@ module.exports = class Routes {
         }
 
         this.config = Object.assign({}, this.defaults, config)
-
-        console.log(this.config)
     };
 
     setup() {
@@ -56,7 +54,13 @@ module.exports = class Routes {
 
                 // Check for duplicate route names.
 
-                routes.push(this.router[formattedMethod](`${imported.path}/${route.name}`, route.fn))
+                if (route.middleware) {
+                    routes.push(this.router[formattedMethod](`${imported.path}/${route.name}`, route.middleware, route.fn))
+                } else {
+                    routes.push(this.router[formattedMethod](`${imported.path}/${route.name}`, route.fn))
+                }
+
+
             })
         });
 
