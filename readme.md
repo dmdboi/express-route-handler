@@ -45,7 +45,8 @@ module.exports = index;
 | --------------- | --------------- | --------------- |
 | `name`       | Name of the route, appends to the end of the global path, i.e /api/users.  | Yes 
 | `method`     | HTTP method.                                                               | Yes 
-| `fn`         | Function to execute when the endpoint is hit.                              | Yes 
+| `fn`         | Function to execute when the endpoint is hit.                              | Yes
+| `middleware` | Function to execute before `fn`.                                           | Yes
 | `docs`       | Endpoint documentation link.                                               | No
 
 ## Options
