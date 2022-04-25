@@ -39,7 +39,7 @@ const index = {
 
 module.exports = index;
 ```
-
+ 
 ## Route
 | *Key* | *Desc* | *Required*  
 | --------------- | --------------- | --------------- |
